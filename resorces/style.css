@@ -1,0 +1,105 @@
+
+html {
+  width: 100%;
+  min-height: 100%;
+  background-color: black;
+  font-style: oblique;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#toDo {
+width: 100%;
+
+}
+
+#toDoContainer {
+  width: 80%;
+  min-height: 200px;
+  border-bottom: 3px solid white;
+  padding: 0 20px 20px 20px;
+}
+
+#done {
+  width: 80%;
+  height: 50%;
+  padding: 0 20px 20px 20px;
+  min-height: 100px;
+}
+
+#header {
+  width: 80%;
+  height: 10%;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.duties {
+  background-color: white;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 3px;
+  color: black;
+  font-weight: 600;
+  display: flex;
+}
+
+.dutyPhrase {
+  width: 70%;
+}
+
+.butContainer {
+  width: 30%;
+  text-align: right;
+}
+
+#inputToDo {
+  border: none;
+  border-radius: 5px;
+  height: 20px;
+  width: 100%;
+}
+
+.push{
+  width: 80%;
+  display: flex;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  /* background-color: #E9ECEF; */
+  background-color: yellowgreen;
+  /* color: yellowgreen; */
+  color: white;
+}
+
+.dutiesTitle {
+  margin: none;
+  padding: none;
+  color: white;
+}
+
+.dutiesDone {
+  color: hotpink;
+  background-color: gray;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 3px;
+  font-weight: 600;
+  display: flex;
+  font-style: oblique;
+  text-decoration: line-through;
+}
