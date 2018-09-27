@@ -3,20 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>toDoList</title>
+    <script src="jquery.js"></script>
     <link rel="stylesheet" href="resorces/style.css">
   </head>
   <body>
   <div id = "header">Mission possible</div>
   <div class="push">
-    <input type="text" name="" value="" placeholder="your mission is.." id = "inputToDo">
+    <input type="text" name="" value="" placeholder="your mission is.." id = "inputToDo" data-input = "work" >
     <button type="button" name="button" id = "pushButton">+</button>
   </div>
   <div id="toDoContainer">
-    <div id ="toDo">
+    <ul id ="toDo" data-list = "work">
       <p class = "dutiesTitle">To_do</p>
-    </div>
+    </ul>
   </div>
-    <div id ="done">
+    <div id ="done" data-listDone = "work">
       <p class = "dutiesTitle">Done</p>
     </div>
   <script src = "resorces/index.js"></script>

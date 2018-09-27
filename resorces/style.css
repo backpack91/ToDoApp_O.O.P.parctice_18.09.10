@@ -20,7 +20,7 @@ body {
 
 #toDo {
 width: 100%;
-
+margin-left: -40px;
 }
 
 #toDoContainer {
@@ -57,11 +57,11 @@ width: 100%;
 }
 
 .dutyPhrase {
-  width: 70%;
+  width: 80%;
 }
 
 .butContainer {
-  width: 30%;
+  width: 20%;
   text-align: right;
 }
 
@@ -84,6 +84,11 @@ button {
   background-color: yellowgreen;
   /* color: yellowgreen; */
   color: white;
+}
+
+.delbutt {
+  align-self: flex-end;
+  color: yellow;
 }
 
 .dutiesTitle {
