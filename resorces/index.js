@@ -1,14 +1,12 @@
 
 function TODO(name) {
   this.el = list = document.querySelector('[data-list="'+name+'"]');
-  this.childs = document.querySelectorAll('[data-list="'+name+'"] li');
   this.elDone = document.querySelector('[data-listDone ="'+name+'"]');
 }
 
 TODO.prototype.completeDuty = function(duty) {
   duty.addEventListener('click', function (e){
   if(this.el.contains(duty) && e.target.nodeName != "BUTTON") {
-    console.log(e.target.nodeName);
     this.elDone.appendChild(duty);
     duty.removeAttribute("class");
     duty.setAttribute("class", "dutiesDone");
@@ -55,20 +53,20 @@ function TODOAdder(name) {
   this.name = name;
 }
 
-TODOAdder.prototype.addByInput = function (name) {
+TODOAdder.prototype.addByInput = function () {
   this.input.addEventListener('keyup', function(e){
     e.preventDefault();
     if(e.keyCode === 13 && e.target.value.length > 0){
       this.todoList = new TODO_LIST(this.input.value);
-      this.todoList.addTodo(name);
-      e.target.value = null;
+      this.todoList.addTodo(this.name);
+      this.input.value = null;
     }
   }.bind(this));
 }
 
 function TODOApp(name) {
   this.todoAdder = new TODOAdder(name);
-  this.todoAdder.addByInput(name);
+  this.todoAdder.addByInput();
 }
 
 var lists = {};
