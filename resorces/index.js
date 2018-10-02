@@ -1,10 +1,10 @@
 
-function TODO(name) {
+function TODO_LIST(name) {
   this.el = list = document.querySelector('[data-list="'+name+'"]');
   this.elDone = document.querySelector('[data-listDone ="'+name+'"]');
 }
 
-TODO.prototype.completeDuty = function(duty) {
+TODO_LIST.prototype.completeDuty = function(duty) {
   duty.addEventListener('click', function (e){
   if(this.el.contains(duty) && e.target.nodeName != "BUTTON") {
     this.elDone.appendChild(duty);
@@ -18,13 +18,13 @@ TODO.prototype.completeDuty = function(duty) {
 }.bind(this));
 }
 
-TODO.prototype.deleteDuty = function(duty, delButton) {
+TODO_LIST.prototype.deleteDuty = function(duty, delButton) {
   delButton.addEventListener('click', function (e) {
     duty.remove();
   })
 }
 
-function TODO_LIST(text) {
+function TODO(text) {
   this.duty = document.createElement('li');
   this.duty.setAttribute('class', 'duties');
 
@@ -39,13 +39,13 @@ function TODO_LIST(text) {
   this.delButton = this.buttContainer.firstChild;
 }
 
-TODO_LIST.prototype.addTodo = function(name) {
-  var todo = new TODO(name);
+TODO.prototype.addTodo = function(name) {
+  var todoList = new TODO_LIST(name);
   this.duty.appendChild(this.dutyPhrase);
   this.duty.appendChild(this.buttContainer);
-  todo.completeDuty(this.duty);
-  todo.deleteDuty(this.duty, this.delButton);
-  todo.el.appendChild(this.duty);
+  todoList.completeDuty(this.duty);
+  todoList.deleteDuty(this.duty, this.delButton);
+  todoList.el.appendChild(this.duty);
 }
 
 function TODOAdder(name) {
@@ -57,8 +57,8 @@ TODOAdder.prototype.addByInput = function () {
   this.input.addEventListener('keyup', function(e){
     e.preventDefault();
     if(e.keyCode === 13 && e.target.value.length > 0){
-      this.todoList = new TODO_LIST(this.input.value);
-      this.todoList.addTodo(this.name);
+      this.todo = new TODO(this.input.value);
+      this.todo.addTodo(this.name);
       this.input.value = null;
     }
   }.bind(this));
